@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noor Fatima - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
       --bg: #eef2ff;
@@ -105,11 +106,43 @@
       padding: 10px 16px;
       border-radius: 999px;
       font-size: 14px;
-      transition: background 0.25s ease;
+      transition: background 0.25s ease, transform 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .header-links a:hover {
       background: rgba(255,255,255,0.28);
+      transform: scale(1.05);
+    }
+
+    .social-links {
+      display: inline-flex;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      background: var(--secondary);
+      text-decoration: none;
+    }
+
+    .social-links a i {
+      font-size: 18px;
     }
 
     nav {
@@ -241,8 +274,8 @@
     <a href="resume.pdf" class="resume-btn" download>📄 View Resume</a>
 
     <div class="header-links">
-      <a href="https://www.linkedin.com/in/noor-fatima-590671237/?skipRedirect=true" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="https://github.com/noorfatima00323" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/noor-fatima-590671237/?skipRedirect=true" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+      <a href="https://github.com/noorfatima00323" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> GitHub</a>
     </div>
   </header>
 
@@ -296,7 +329,10 @@
     <div class="card">
       <p>Email: <a href="mailto:noorfatima00323@gmail.com">noorfatima00323@gmail.com</a></p>
       <p>Phone: 03451859229</p>
-      <p><a href="https://www.linkedin.com/in/noor-fatima-590671237/?skipRedirect=true" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/noorfatima00323" target="_blank" rel="noreferrer">GitHub</a></p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/noor-fatima-590671237/?skipRedirect=true" target="_blank" rel="noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/noorfatima00323" target="_blank" rel="noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      </div>
     </div>
   </section>
 

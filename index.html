@@ -7,23 +7,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
-      --bg: #eef2ff;
-      --text: #111827;
+      --bg: #ffffff;
+      --text: #111111;
       --card: #ffffff;
-      --primary: #2563eb;
-      --secondary: #0ea5e9;
-      --border: #cbd5e1;
-      --shadow: rgba(15, 23, 42, 0.08);
+      --primary: #d4af37;
+      --secondary: #f8c626;
+      --border: rgba(212, 175, 55, 0.25);
+      --shadow: rgba(0, 0, 0, 0.08);
     }
 
     body.dark {
-      --bg: #0f172a;
-      --text: #f8fafc;
-      --card: #1f2937;
-      --primary: #7c3aed;
-      --secondary: #38bdf8;
-      --border: #334155;
-      --shadow: rgba(15, 23, 42, 0.2);
+      --bg: #040404;
+      --text: #f8e7b4;
+      --card: #111111;
+      --primary: #d4af37;
+      --secondary: #f6c358;
+      --border: rgba(212, 175, 55, 0.22);
+      --shadow: rgba(0, 0, 0, 0.55);
     }
 
     * {
@@ -56,6 +56,72 @@
       text-align: center;
       position: relative;
       animation: fadeDown 1s ease;
+      overflow: hidden;
+    }
+
+    .header-decorative {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.12;
+      pointer-events: none;
+      background: rgba(212, 175, 55, 0.35);
+    }
+
+    .header-decorative:nth-child(1) {
+      width: 300px;
+      height: 300px;
+      top: -100px;
+      right: -50px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .header-decorative:nth-child(2) {
+      width: 220px;
+      height: 220px;
+      bottom: -50px;
+      left: -80px;
+      animation: float 8s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(20px); }
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 30px;
+      border: 3px solid rgba(255,255,255,0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: scaleIn 0.8s ease;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     header h1 {
@@ -77,18 +143,18 @@
       margin-top: 15px;
       display: inline-block;
       padding: 12px 22px;
-      background: white;
-      color: #111827;
+      background: #d4af37;
+      color: #111111;
       font-weight: 700;
       border-radius: 30px;
       text-decoration: none;
       transition: 0.25s ease;
-      box-shadow: 0 15px 35px rgba(15, 23, 42, 0.18);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
     }
 
     .resume-btn:hover {
       transform: translateY(-2px);
-      background: #f8fafc;
+      background: #fcd34d;
     }
 
     .header-links {
@@ -102,7 +168,7 @@
     .header-links a {
       color: white;
       text-decoration: none;
-      background: rgba(255,255,255,0.18);
+      background: rgba(212, 175, 55, 0.18);
       padding: 10px 16px;
       border-radius: 999px;
       font-size: 14px;
@@ -113,7 +179,7 @@
     }
 
     .header-links a:hover {
-      background: rgba(255,255,255,0.28);
+      background: rgba(212, 175, 55, 0.28);
       transform: scale(1.05);
     }
 
@@ -220,7 +286,7 @@
     .card ul {
       margin-top: 18px;
       padding-left: 20px;
-      color: #475569;
+      color: var(--text);
       line-height: 1.8;
     }
 
@@ -264,18 +330,24 @@
     }
   </style>
 </head>
-<body>
+<body class="dark">
 
   <header>
-    <button class="toggle-btn" onclick="toggleDark()">🌙 Dark</button>
-    <h1>Noor Fatima</h1>
-    <p>Final-year BS Computer Science student building modern websites, mobile applications, and digital marketing solutions for small businesses and startups.</p>
+    <div class="header-decorative"></div>
+    <div class="header-decorative"></div>
+    <button class="toggle-btn" onclick="toggleDark()">☀ Light</button>
+    
+    <div class="header-content">
+      <div class="avatar"><img src="profile.jpg" alt="Profile Picture"></div>
+      <h1>Noor Fatima</h1>
+      <p>Final-year BS Computer Science student building modern websites, mobile applications, and digital marketing solutions for small businesses and startups.</p>
 
-    <a href="resume.pdf" class="resume-btn" download>📄 View Resume</a>
+      <a href="resume.pdf" class="resume-btn" download>📄 View Resume</a>
 
-    <div class="header-links">
-      <a href="https://www.linkedin.com/in/noor-fatima-590671237/?skipRedirect=true" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-      <a href="https://github.com/noorfatima00323" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> GitHub</a>
+      <div class="header-links">
+        <a href="https://www.linkedin.com/in/noor-fatima-590671237/?skipRedirect=true" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <a href="https://github.com/noorfatima00323" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> GitHub</a>
+      </div>
     </div>
   </header>
 
@@ -327,12 +399,12 @@
   <section id="contact">
     <h2>Contact</h2>
     <div class="card">
-      <p>Email: <a href="mailto:noorfatima00323@gmail.com">noorfatima00323@gmail.com</a></p>
-      <p>Phone: 03451859229</p>
       <div class="social-links">
+        <a href="mailto:noorfatima00323@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/noor-fatima-590671237/?skipRedirect=true" target="_blank" rel="noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://github.com/noorfatima00323" target="_blank" rel="noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
       </div>
+      <p style="margin-top: 20px; font-size: 14px; color: #6b7280;">noorfatima00323@gmail.com</p>
     </div>
   </section>
 

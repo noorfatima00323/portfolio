@@ -290,6 +290,95 @@
       line-height: 1.8;
     }
 
+    .projects-wrapper {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .projects-wrapper::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .projects-wrapper::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 999px;
+    }
+
+    .project-card {
+      min-width: 280px;
+      max-width: 320px;
+      flex: 0 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .project-content {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      min-height: 260px;
+      gap: 16px;
+    }
+
+    .project-content h3 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .project-content p {
+      margin: 0;
+      line-height: 1.7;
+      color: var(--text);
+      opacity: 0.9;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .project-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.16);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: auto;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
     .skills span {
       display: inline-block;
       background: var(--primary);
@@ -386,13 +475,74 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="card">
-      <h3>Cake Shop Website</h3>
-      <p>Static website built using C# and web technologies for a bakery business.</p>
-    </div>
-    <div class="card">
-      <h3>E-Therapy Mobile App</h3>
-      <p>Flutter-based mental health support app with chatbot and UI design.</p>
+    <div class="projects-wrapper">
+      <article class="project-card">
+        <div class="project-content">
+          <h3>Cake Shop Website</h3>
+          <p>Static website built using C# and web technologies for a bakery business.</p>
+          <div class="project-tags">
+            <span class="project-tag">C#</span>
+            <span class="project-tag">Web</span>
+          </div>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-content">
+          <h3>E-Therapy Mobile App</h3>
+          <p>Flutter-based mental health support app with chatbot and UI design.</p>
+          <div class="project-tags">
+            <span class="project-tag">Flutter</span>
+            <span class="project-tag">Mobile</span>
+          </div>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-content">
+          <h3>Taekwondo Academy Promotional Poster</h3>
+          <p>Designed a promotional poster for a Taekwondo academy to advertise classes and attract new students. Created an engaging layout with clear visual hierarchy, compelling graphics, and essential class information.</p>
+          <div class="project-tags">
+            <span class="project-tag">Graphic Design</span>
+          </div>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-content">
+          <h3>Animated University Logo</h3>
+          <p>Designed and animated the university logo upon the request of an internal examiner. Created smooth motion effects and professional transitions while maintaining the university's visual identity.</p>
+          <div class="project-tags">
+            <span class="project-tag">Graphic Design</span>
+          </div>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-content">
+          <h3>Salon Price List Brochure Design</h3>
+          <p>Designed a professional price list brochure for a salon to showcase services and pricing in a clear and attractive format. Focused on elegant layout design, readability, and brand presentation to enhance the customer experience.</p>
+          <div class="project-tags">
+            <span class="project-tag">Graphic Design</span>
+          </div>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-content">
+          <h3>Half Graduation Celebration Cake Design</h3>
+          <p>Created a custom cake design for a university Half Graduation Celebration event. Developed a visually appealing layout that reflected the achievement and spirit of the occasion.</p>
+          <div class="project-tags">
+            <span class="project-tag">Graphic Design</span>
+          </div>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </article>
     </div>
   </section>
 
